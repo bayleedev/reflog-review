@@ -25,5 +25,5 @@ cd ~/reflog-review && bundle install
 Add this to your `.gitconfig` file.
 ~~~ prolog
 [alias]
-	review = !sh -c 'ruby ~/reflog-review/bin/review.rb'
+	review = !sh -c 'ruby ~/reflog-review/bin/reflog-review.rb'
 ~~~
