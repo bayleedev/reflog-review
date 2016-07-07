@@ -18,8 +18,9 @@ git review
 ~~~
 j - next commit
 k - previous commit
-p - pick commit
 s - show current head
+p - pick commit
+q - quit
 ? - print help
 ~~~
 
