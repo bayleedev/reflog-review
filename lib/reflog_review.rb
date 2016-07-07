@@ -13,8 +13,9 @@ class ReflogReview
     puts [
       "j - next commit",
       "k - previous commit",
-      "p - pick commit",
       "s - show current head",
+      "p - pick commit",
+      "q - quit",
       "? - print help",
     ].join("\n").colorize(:light_red)
   end
@@ -31,13 +32,13 @@ class ReflogReview
     show_head
   end
 
+  def command_p
+    log.pick and command_q
+  end
+
   def command_q
     puts "\n\nYou just lost the game.".colorize(:black)
     exit
-  end
-
-  def command_p
-    log.pick and command_q
   end
 
   def method_missing(method, *args)
@@ -46,7 +47,7 @@ class ReflogReview
   end
 
   def prompt!
-    status = "Is this the drone you are looking for [j,k,p,q,?]? "
+    status = "Is this the drone you are looking for [j,k,s,p,q,?]? "
     print status.colorize(:light_blue)
   end
 
